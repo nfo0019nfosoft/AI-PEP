@@ -44,17 +44,39 @@
     </div>
   </nav>
 
-  
-<script>
-const hamburger =
-document.getElementById("hamburger");
+ <script>
 
-const navLinks =
-document.getElementById("navLinks");
+/* ===== NAVBAR ELEMENTS ===== */
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
 
-hamburger.addEventListener("click",()=>{
+/* ===== MENU TOGGLE ===== */
+hamburger.addEventListener("click", () => {
   navLinks.classList.toggle("active");
 });
+
+
+/* ===== CLOSE MENU WHEN LINK CLICK ===== */
+document.querySelectorAll("#navLinks a")
+.forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+  });
+});
+
+
+/* ===== CLOSE MENU WHEN CLICK OUTSIDE ===== */
+document.addEventListener("click", (e) => {
+
+  if(
+    !hamburger.contains(e.target) &&
+    !navLinks.contains(e.target)
+  ){
+    navLinks.classList.remove("active");
+  }
+
+});
+
 </script>
 
 
@@ -67,6 +89,17 @@ hamburger.addEventListener("click",()=>{
 <section class="hero">
 
 
+
+<div class="ai-bg-icons">
+
+<i class="fab fa-python"></i>
+<i class="fas fa-brain"></i>
+<i class="fas fa-robot"></i>
+<i class="fas fa-microchip"></i>
+<i class="fas fa-database"></i>
+<i class="fas fa-network-wired"></i>
+
+</div>
 
 <div class="hero-content">
 
@@ -659,22 +692,21 @@ PROGRAM OUTCOMES & COMPETENCY GOALS
 /* already exist ayina variable malli create kakunda */
 if(!window.revealElements){
 
-window.revealElements =
-document.querySelectorAll(
-".reveal-left, .reveal-right, .reveal-up, .zoom-in"
-);
+window.revealElements = document.querySelectorAll(".reveal-left, .reveal-right, .reveal-up, .zoom-in");
 
 function globalReveal(){
 
 const trigger = window.innerHeight - 80;
 
-window.revealElements.forEach(el=>{
+if(window.revealElements && window.revealElements.length > 0){
+  window.revealElements.forEach(el=>{
 const top = el.getBoundingClientRect().top;
 
 if(top < trigger){
 el.classList.add("show");
 }
 });
+}
 
 }
 
