@@ -1,0 +1,1992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nfosoft Innovations</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<canvas id="gridCanvas"></canvas>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container nav-container">
+
+      <!-- Logo -->
+      <a href="#home" class="logo">
+        <img src="logoo.png" alt="Logo">
+      </a>
+
+      <!-- Nav Links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#program-overview">Program Overview</a></li>
+        <li><a href="#structure">Program Structure</a></li>
+        <li><a href="#outcomes">Outcomes</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#mentors">Mentors</a></li>
+        <li><a href="#internship">Internship</a></li>
+      </ul>
+
+      <!-- Hamburger -->
+      <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+
+    </div>
+  </nav>
+
+  
+
+
+
+
+  
+
+
+<main>
+
+
+<section class="hero">
+
+<canvas id="gridCanvas"></canvas>
+
+<div class="hero-content">
+
+<!-- TOP BADGE -->
+<div class="badge">
+  <span class="blink-dot"></span>
+  NFOSOFT INNOVATIONS · NOW ENROLLED
+</div>
+
+<!-- MAIN HEADING -->
+<h1 class="title">
+
+<span class="white-text">AI PRODUCT</span><br>
+
+<span class="outline-text">ENGINEERING PROGRAM</span><br>
+
+<span class="aipep">AI-PEP</span>
+
+</h1>
+
+<!-- FEATURES -->
+<div class="features">
+
+<span class="feature">
+<i class="fas fa-building"></i>
+Fully Onsite Training
+</span>
+
+<span class="feature">
+<i class="fas fa-bolt"></i>
+Cloud GPU Infrastructure
+</span>
+
+<span class="feature">
+<i class="fas fa-code"></i>
+Real AI Product Development
+</span>
+
+<span class="feature">
+<i class="fas fa-bullseye"></i>
+Direct Recruitment Opportunity
+</span>
+
+</div>
+
+<!-- BUTTONS -->
+<div class="buttons">
+
+<a href="#" class="btn-primary">
+APPLY FOR AI-PEP
+</a>
+
+<a href="#" class="btn-outline">
+BOOK COUNSELLING →
+</a>
+
+</div>
+
+</div>
+</section>
+
+<script>
+const canvas = document.getElementById("gridCanvas");
+const ctx = canvas.getContext("2d");
+
+function resize(){
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener("resize", resize);
+
+let spacing = 60;
+
+function drawGrid(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+ctx.strokeStyle = "rgba(120,90,180,0.09)";
+ctx.lineWidth = 1;
+
+for(let x=0; x<canvas.width; x+=spacing){
+ctx.beginPath();
+ctx.moveTo(x,0);
+ctx.lineTo(x,canvas.height);
+ctx.stroke();
+}
+
+for(let y=0; y<canvas.height; y+=spacing){
+ctx.beginPath();
+ctx.moveTo(0,y);
+ctx.lineTo(canvas.width,y);
+ctx.stroke();
+}
+
+for(let x=0; x<canvas.width; x+=spacing){
+for(let y=0; y<canvas.height; y+=spacing){
+ctx.fillStyle="rgba(167,139,250,0.09)";
+ctx.beginPath();
+ctx.arc(x,y,1.3,0,Math.PI*2);
+ctx.fill();
+}
+}
+}
+
+drawGrid();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="program-overview" class="program-section">
+
+  <h2 class="program-heading">
+    Program Overview
+    <span class="heading-line"></span>
+  </h2>
+
+  <div class="program-container">
+
+    <div class="program-card reveal-left">
+      <div class="program-icon">🧠</div>
+      <div>
+        <h3>Advanced AI Program</h3>
+        <p>Designed to develop professionals who can engineer and build AI products, not merely use AI tools.</p>
+      </div>
+    </div>
+
+    <div class="program-card reveal-right">
+      <div class="program-icon">⚙️</div>
+      <div>
+        <h3>End-to-End Development</h3>
+        <p>Focuses on complete AI product development from problem definition to deployment.</p>
+      </div>
+    </div>
+
+    <div class="program-card reveal-left">
+      <div class="program-icon">📐</div>
+      <div>
+        <h3>Core Engineering Principles</h3>
+        <p>Emphasizes algorithmic thinking, model efficiency, scalability, and production readiness.</p>
+      </div>
+    </div>
+
+    <div class="program-card reveal-right">
+      <div class="program-icon">💻</div>
+      <div>
+        <h3>Real Product Development</h3>
+        <p>Work on actual AI products, avoiding template-based or API-only implementations.</p>
+      </div>
+    </div>
+<div class="program-card reveal-left">
+  <div class="program-icon">📘</div>
+  <div>
+    <h3>Integrated AI Curriculum</h3>
+    <p>Covers ML, Deep Learning, NLP, Computer Vision, Generative AI, and MLOps.</p>
+  </div>
+</div>
+
+<div class="program-card reveal-right">
+  <div class="program-icon">🏭</div>
+  <div>
+    <h3>Industry-Grade Practices</h3>
+    <p>Follows version control, experiment tracking, and performance benchmarking practices.</p>
+  </div>
+</div>
+
+<div class="program-card reveal-left">
+  <div class="program-icon">☁️</div>
+  <div>
+    <h3>Cloud-Based Environments</h3>
+    <p>Work entirely on cloud-based GPU infrastructure with real-world deployment exposure.</p>
+  </div>
+</div>
+
+<div class="program-card reveal-right">
+  <div class="program-icon">🔄</div>
+  <div>
+    <h3>Real-World Workflows</h3>
+    <p>Learning driven by actual workflows from data ingestion to deployment and scaling.</p>
+  </div>
+</div>
+
+<div class="program-card reveal-left">
+  <div class="program-icon">👨‍🏫</div>
+  <div>
+    <h3>Active Mentorship</h3>
+    <p>Direct guidance from AI engineers working on production systems.</p>
+  </div>
+</div>
+
+
+    <div class="program-card reveal-right">
+      <div class="program-icon">🚀</div>
+      <div>
+        <h3>Product-Focused Outcomes</h3>
+        <p>Build complete AI products, not just models or notebooks.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+<script>
+    const programCards = document.querySelectorAll('.program-card');
+
+function revealProgramCards(){
+  const trigger = window.innerHeight - 100;
+
+  programCards.forEach(card=>{
+    const top = card.getBoundingClientRect().top;
+    if(top < trigger){
+      card.classList.add('show');
+    }
+  });
+}
+
+window.addEventListener('scroll', revealProgramCards);
+revealProgramCards();
+</script>
+
+
+
+
+
+<section class="residency-section">
+
+  <h2 class="residency-heading">
+    AI Residency Program (Onsite Immersive Track)
+       <span class="heading-line"></span>
+  </h2>
+
+  <div class="timeline">
+
+    <!-- ITEM 1 -->
+    <div class="timeline-item">
+      <div class="timeline-icon reveal-left">
+        <i class="fas fa-building"></i>
+      </div>
+      <div class="timeline-content reveal-right">
+        <h3>Fully Onsite Office-Based Training</h3>
+        <p>Mandatory in-office immersive training environment.</p>
+      </div>
+    </div>
+
+    <!-- ITEM 2 -->
+    <div class="timeline-item">
+      <div class="timeline-icon reveal-left">
+        <i class="fas fa-clock"></i>
+      </div>
+      <div class="timeline-content reveal-right">
+        <h3>Timings: 9:00 AM – 6:00 PM</h3>
+        <p>Structured full-day engineering schedule.</p>
+      </div>
+    </div>
+
+    <!-- ITEM 3 -->
+    <div class="timeline-item">
+      <div class="timeline-icon reveal-left">
+        <i class="fas fa-calendar-alt"></i>
+      </div>
+      <div class="timeline-content reveal-right">
+        <h3>Schedule: Monday to Friday</h3>
+        <p>Weekly intensive training routine.</p>
+      </div>
+    </div>
+
+    <!-- ITEM 4 -->
+    <div class="timeline-item">
+      <div class="timeline-icon reveal-left">
+        <i class="fas fa-map-marker-alt"></i>
+      </div>
+      <div class="timeline-content reveal-right">
+        <h3>Location: Nfosoft Office</h3>
+        <p>Physical presence required for immersive collaboration.</p>
+      </div>
+    </div>
+
+    <!-- ITEM 5 -->
+    <div class="timeline-item">
+      <div class="timeline-icon reveal-left">
+        <i class="fas fa-hourglass-half"></i>
+      </div>
+      <div class="timeline-content reveal-right">
+        <h3>Total Duration: 12 Months</h3>
+        <p>Complete immersive residency timeline.</p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+const reveals = document.querySelectorAll('.reveal-left, .reveal-right');
+
+function revealOnScroll(){
+  const trigger = window.innerHeight - 100;
+
+  reveals.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if(top < trigger){
+      el.classList.add('active');
+    }
+  });
+}
+
+window.addEventListener('scroll', revealOnScroll);
+revealOnScroll();
+</script>
+
+
+
+
+
+<section class="structure-section" id="structure">
+
+  <div class="structure-container">
+
+    <h2 class="section-title">
+      PROGRAM STRUCTURE
+      <span class="heading-line"></span>
+    </h2>
+
+    <!-- TABS -->
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="phase1">
+        First 6 Months: Intensive Training
+      </button>
+      <button class="tab-btn" data-tab="phase2">
+        Next 6 Months: Live AI Product Project
+      </button>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="tab-content">
+
+      <!-- PHASE 1 -->
+      <div class="content-box active" id="phase1">
+        <div class="content-inner zoom-in reveal-left">
+          <span class="badge">6 Months</span>
+          <ul>
+            <li><i class="fas fa-check-circle"></i> Intensive hands-on AI-PEP training</li>
+            <li><i class="fas fa-check-circle"></i> Advanced AI & engineering concepts</li>
+            <li><i class="fas fa-check-circle"></i> Mentoring, evaluations & guided implementation</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- PHASE 2 -->
+      <div class="content-box" id="phase2">
+        <div class="content-inner reveal-right">
+          <span class="badge">6 Months</span>
+          <ul>
+            <li><i class="fas fa-check-circle"></i> Work on real internal/client AI products</li>
+            <li><i class="fas fa-check-circle"></i> Production exposure & real datasets</li>
+            <li><i class="fas fa-check-circle"></i> Professional AI engineering simulation</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- POSITIONING -->
+    <h3 class="position-title">Positioning Statement</h3>
+
+    <div class="position-grid">
+
+      <div class="position-card reveal-left">
+        <i class="fas fa-check"></i>
+        <p>Full-time AI residency program</p>
+      </div>
+
+      <div class="position-card reveal-right">
+        <i class="fas fa-check"></i>
+        <p>Industry-grade AI transformation track</p>
+      </div>
+
+      <div class="position-card reveal-left">
+        <i class="fas fa-check"></i>
+        <p>Corporate work culture & accountability standards</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+  const buttons = document.querySelectorAll(".tab-btn");
+  const contents = document.querySelectorAll(".content-box");
+
+  /* TAB SWITCH */
+  buttons.forEach(btn=>{
+    btn.addEventListener("click",()=>{
+
+      buttons.forEach(b=>b.classList.remove("active"));
+      contents.forEach(c=>c.classList.remove("active"));
+
+      btn.classList.add("active");
+
+      const activeContent = document.getElementById(btn.dataset.tab);
+      activeContent.classList.add("active");
+
+      const zoomEl = activeContent.querySelector(".zoom-in");
+      if(zoomEl){
+        zoomEl.classList.remove("animate-zoom");
+        setTimeout(()=>zoomEl.classList.add("animate-zoom"),50);
+      }
+
+    });
+  });
+
+  /* FIRST LOAD ZOOM */
+  const firstZoom = document.querySelector("#phase1 .zoom-in");
+  if(firstZoom){
+    setTimeout(()=>firstZoom.classList.add("animate-zoom"),300);
+  }
+
+  /* SCROLL REVEAL */
+  const reveals = document.querySelectorAll(".reveal-left, .reveal-right");
+
+  function revealOnScroll(){
+    const trigger = window.innerHeight - 100;
+    reveals.forEach(el=>{
+      const top = el.getBoundingClientRect().top;
+      if(top < trigger){
+        el.classList.add("show");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll();
+
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+<section class="who-section">
+
+<div class="who-container">
+
+<h2 class="who-title">
+WHO THIS PROGRAM IS FOR
+<span class="title-line"></span>
+</h2>
+
+<div class="who-wrapper">
+
+<!-- CARD 1 -->
+<div class="who-box reveal-left">
+
+<div class="who-icon">
+<i class="fas fa-graduation-cap"></i>
+</div>
+
+<h3>Academic Backgrounds</h3>
+
+<p>
+B.Tech / B.E in Artificial Intelligence, Computer Science,
+Data Science, Machine Learning or any graduation with
+AI-related coursework and strong technical fundamentals.
+</p>
+
+</div>
+
+
+<!-- CARD 2 -->
+<div class="who-box reveal-right">
+
+<div class="who-icon">
+<i class="fas fa-user-tie"></i>
+</div>
+
+<h3>Industry Professionals</h3>
+
+<p>
+Software developers transitioning into AI engineering roles,
+data analysts and engineers moving toward advanced AI systems,
+and IT professionals seeking full-time transformation into AI
+product development.
+</p>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded",()=>{
+
+const elements=document.querySelectorAll(
+".reveal-left,.reveal-right"
+);
+
+function reveal(){
+const trigger=window.innerHeight-120;
+
+elements.forEach(el=>{
+const top=el.getBoundingClientRect().top;
+
+if(top<trigger){
+el.classList.add("show");
+}
+});
+}
+
+window.addEventListener("scroll",reveal);
+reveal();
+
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="outcomes-section" id="outcomes">
+
+<div class="outcomes-container">
+
+<h2 class="outcomes-title">
+PROGRAM OUTCOMES & COMPETENCY GOALS
+<span></span>
+</h2>
+
+
+<div class="outcomes-grid">
+
+<!-- CARD -->
+<div class="outcome-card reveal-left">
+<div class="icon-box"><i class="fas fa-rocket"></i></div>
+<div class="content">
+<h3>Build End-to-End AI Products</h3>
+<p>Complete AI product development lifecycle from idea to deployment.</p>
+</div>
+</div>
+
+<div class="outcome-card reveal-right">
+<div class="icon-box"><i class="fas fa-brain"></i></div>
+<div class="content">
+<h3>Master Core AI Disciplines</h3>
+<p>Comprehensive understanding of modern AI systems and architectures.</p>
+</div>
+</div>
+
+<div class="outcome-card reveal-left">
+<div class="icon-box"><i class="fas fa-gears"></i></div>
+<div class="content">
+<h3>Engineering Best Practices</h3>
+<p>Industry-standard workflows and scalable AI engineering methods.</p>
+</div>
+</div>
+
+<div class="outcome-card reveal-right">
+<div class="icon-box"><i class="fas fa-cloud"></i></div>
+<div class="content">
+<h3>Cloud GPU Infrastructure</h3>
+<p>Hands-on experience with production cloud environments.</p>
+</div>
+</div>
+
+<div class="outcome-card reveal-left">
+<div class="icon-box"><i class="fas fa-network-wired"></i></div>
+<div class="content">
+<h3>Design Scalable Systems</h3>
+<p>Architecture thinking for enterprise-level deployments.</p>
+</div>
+</div>
+
+<div class="outcome-card reveal-right">
+<div class="icon-box"><i class="fas fa-chart-line"></i></div>
+<div class="content">
+<h3>Optimize AI Models</h3>
+<p>Performance tuning, evaluation and monitoring pipelines.</p>
+</div>
+</div>
+
+<div class="outcome-card reveal-left">
+<div class="icon-box"><i class="fas fa-server"></i></div>
+<div class="content">
+<h3>Production Deployment</h3>
+<p>Deploy and monitor real-world AI systems.</p>
+</div>
+</div>
+
+<div class="outcome-card reveal-right">
+<div class="icon-box"><i class="fas fa-lightbulb"></i></div>
+<div class="content">
+<h3>AI Product Thinking</h3>
+<p>Innovation mindset focused on solving business problems.</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</section>
+<script>
+/* ================= GLOBAL SCROLL ANIMATION ================= */
+
+/* already exist ayina variable malli create kakunda */
+if(!window.revealElements){
+
+window.revealElements =
+document.querySelectorAll(
+".reveal-left, .reveal-right, .reveal-up, .zoom-in"
+);
+
+function globalReveal(){
+
+const trigger = window.innerHeight - 80;
+
+window.revealElements.forEach(el=>{
+const top = el.getBoundingClientRect().top;
+
+if(top < trigger){
+el.classList.add("show");
+}
+});
+
+}
+
+window.addEventListener("scroll", globalReveal);
+window.addEventListener("load", globalReveal);
+
+}
+
+</script>
+
+
+
+
+
+
+
+<section class="syllabus-section" id="syllabus">
+
+<h2 class="syllabus-title">
+COURSE SYLLABUS
+<span></span>
+</h2>
+
+<div class="syllabus-grid">
+
+<div class="syllabus-card reveal-up">
+<div class="icon"><i class="fas fa-brain"></i></div>
+<h3>AI Foundations & Advanced Concepts</h3>
+<p>Core AI principles, mathematical foundations and advanced theory.</p>
+</div>
+
+<div class="syllabus-card reveal-up">
+<div class="icon"><i class="fas fa-network-wired"></i></div>
+<h3>Machine Learning & Deep Learning</h3>
+<p>Supervised learning, neural networks and deep architectures.</p>
+</div>
+
+<div class="syllabus-card reveal-up">
+<div class="icon"><i class="fas fa-eye"></i></div>
+<h3>NLP, Computer Vision & Generative AI</h3>
+<p>Transformers, GANs and intelligent vision systems.</p>
+</div>
+
+<div class="syllabus-card reveal-up">
+<div class="icon"><i class="fas fa-sitemap"></i></div>
+<h3>AI System Architecture & Design</h3>
+<p>Enterprise scalable AI system architecture patterns.</p>
+</div>
+
+<div class="syllabus-card reveal-up">
+<div class="icon"><i class="fas fa-gears"></i></div>
+<h3>MLOps, Deployment & Monitoring</h3>
+<p>CI/CD pipelines and production monitoring workflows.</p>
+</div>
+
+<div class="syllabus-card reveal-up">
+<div class="icon"><i class="fas fa-rocket"></i></div>
+<h3>AI Product Engineering Workflows</h3>
+<p>End-to-end AI product lifecycle development.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link rel="stylesheet" href="syllabus.css">
+
+
+<script>
+
+/* SCROLL ANIMATION */
+
+const revealCards =
+document.querySelectorAll(".reveal-up");
+
+function revealOnScroll(){
+
+const trigger = window.innerHeight - 80;
+
+revealCards.forEach(card=>{
+const top = card.getBoundingClientRect().top;
+
+if(top < trigger){
+card.classList.add("show");
+}
+
+});
+
+}
+
+window.addEventListener("scroll",revealOnScroll);
+revealOnScroll();
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="tools-section" id="tools">
+
+<h2 class="tools-title">
+TOOLS & TECHNOLOGIES COVERED
+<span></span>
+</h2>
+
+<div class="tools-wrapper">
+
+<div class="tool-card reveal-left">
+<div class="tool-icon"><i class="fab fa-python"></i></div>
+<div>
+<h3>Python for AI Development</h3>
+<p>Core programming language for AI/ML development with rich libraries.</p>
+</div>
+</div>
+
+<div class="tool-card reveal-right">
+<div class="tool-icon"><i class="fas fa-brain"></i></div>
+<div>
+<h3>TensorFlow / PyTorch</h3>
+<p>Deep learning frameworks for building neural networks.</p>
+</div>
+</div>
+
+<div class="tool-card reveal-left">
+<div class="tool-icon"><i class="fas fa-chart-line"></i></div>
+<div>
+<h3>Scikit-learn</h3>
+<p>Machine learning library for preprocessing and evaluation.</p>
+</div>
+</div>
+
+<div class="tool-card reveal-right">
+<div class="tool-icon"><i class="fas fa-cloud"></i></div>
+<div>
+<h3>Cloud GPU Platforms</h3>
+<p>AWS, Google Cloud and Azure for scalable training.</p>
+</div>
+</div>
+
+<div class="tool-card reveal-left">
+<div class="tool-icon"><i class="fas fa-code-branch"></i></div>
+<div>
+<h3>Version Control & Tracking</h3>
+<p>Git, DVC and MLFlow experiment tracking systems.</p>
+</div>
+</div>
+
+<div class="tool-card reveal-right">
+<div class="tool-icon"><i class="fas fa-gears"></i></div>
+<div>
+<h3>Deployment & Monitoring</h3>
+<p>Docker, Kubernetes and monitoring pipelines.</p>
+</div>
+</div>
+
+</div>
+</section>
+<script>
+    
+
+/* SCROLL REVEAL */
+
+const toolsReveal =
+document.querySelectorAll(".reveal-left,.reveal-right");
+
+function revealTools(){
+
+const trigger = window.innerHeight - 80;
+
+toolsReveal.forEach(el=>{
+if(el.getBoundingClientRect().top < trigger){
+el.classList.add("show");
+}
+});
+
+}
+
+window.addEventListener("scroll",revealTools);
+revealTools();
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="projects-section" id="projects">
+
+<h2 class="projects-title">
+PROJECTS
+<span></span>
+</h2>
+
+<div class="projects-row">
+
+<div class="project-card reveal">
+<i class="fas fa-industry"></i>
+<h3>Real-world AI product use cases</h3>
+<p>Work on industry problems and build production-ready AI solutions.</p>
+</div>
+
+<div class="project-card reveal down">
+<i class="fas fa-diagram-project"></i>
+<h3>End-to-end model development</h3>
+<p>Complete lifecycle from data collection to deployment.</p>
+</div>
+
+<div class="project-card reveal">
+<i class="fas fa-arrows-rotate"></i>
+<h3>Data-to-deployment workflows</h3>
+<p>Build automated ML pipelines for deployment.</p>
+</div>
+
+<div class="project-card reveal down">
+<i class="fas fa-gauge-high"></i>
+<h3>Model optimization & benchmarking</h3>
+<p>Improve performance and production efficiency.</p>
+</div>
+
+<div class="project-card reveal">
+<i class="fas fa-rocket"></i>
+<h3>Product-level AI implementation</h3>
+<p>Deploy scalable monitored AI systems.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<script>
+
+/* SAFE GLOBAL REVEAL */
+const revealEls = document.querySelectorAll(".reveal");
+
+function revealScroll(){
+const trigger = window.innerHeight - 80;
+
+revealEls.forEach(el=>{
+if(el.getBoundingClientRect().top < trigger){
+el.classList.add("show");
+}
+});
+}
+
+window.addEventListener("scroll", revealScroll);
+revealScroll();
+
+</script>
+
+
+
+
+
+
+
+
+
+
+<section id="mentors" class="mentors-section">
+
+  <div class="container">
+
+    <h2 class="mentors-title">
+      MENTORS
+      <span class="heading-line"></span>
+    </h2>
+
+    <div class="mentors-wrapper">
+
+      <!-- CARD 1 -->
+      <div class="mentor-card reveal-left">
+        <div class="mentor-icon">
+          <i class="fas fa-industry"></i>
+        </div>
+
+        <div class="mentor-content">
+          <h3>Industry professionals with AI product engineering experience</h3>
+          <p>
+            Mentors actively building AI platforms and intelligent systems,
+            bringing real-world product development expertise.
+          </p>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="mentor-card reveal-right">
+        <div class="mentor-icon">
+          <i class="fas fa-comments"></i>
+        </div>
+
+        <div class="mentor-content">
+          <h3>Continuous guidance and performance reviews</h3>
+          <p>
+            Direct mentor involvement through structured feedback,
+            evaluations, and continuous learning support.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="infra-section">
+
+  <div class="container">
+
+    <h2 class="infra-title">
+      INFRASTRUCTURE AND LEARNING ENVIRONMENT
+      <span class="heading-line"></span>
+    </h2>
+
+    <div class="infra-grid">
+
+      <div class="infra-card reveal-left">
+        <i class="fas fa-cloud"></i>
+        <p>Work is done entirely on cloud-based environments</p>
+      </div>
+
+      <div class="infra-card reveal-right">
+        <i class="fas fa-microchip"></i>
+        <p>Access to GPU-connected cloud infrastructure</p>
+      </div>
+
+      <div class="infra-card reveal-left">
+        <i class="fas fa-server"></i>
+        <p>No dependency on local systems</p>
+      </div>
+
+      <div class="infra-card reveal-right">
+        <i class="fas fa-laptop-code"></i>
+        <p>Complete cloud-based workflow</p>
+      </div>
+
+      <div class="infra-card reveal-left">
+        <i class="fas fa-atom"></i>
+        <p>
+          Planned exposure to quantum computing environments
+          once commercially available
+        </p>
+      </div>
+
+      <div class="infra-card reveal-right">
+     <i class="fa-solid fa-microchip"></i>
+        <p>Future-ready quantum computing integration</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id ="internship" class="internship-section">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      INTERNSHIP
+      <span class="heading-line"></span>
+    </h2>
+
+    <div class="internship-grid">
+
+      <!-- CARD 1 -->
+      <div class="intern-card reveal-up">
+        <div class="intern-icon">
+          <i class="fa-solid fa-calendar"></i>
+        </div>
+        <h3>6 months of live AI product work</h3>
+        <p>
+          Extended hands-on experience working on actual AI
+          products in a professional environment
+        </p>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="intern-card reveal-up">
+        <div class="intern-icon">
+          <i class="fa-solid fa-building"></i>
+        </div>
+        <h3>Work on internal AI systems at Nfosoft Innovations</h3>
+        <p>
+          Gain practical experience by contributing to real AI
+          projects and systems used by the company
+        </p>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="intern-card reveal-up">
+        <div class="intern-icon">
+          <i class="fa-solid fa-database"></i>
+        </div>
+        <h3>Exposure to production data and real constraints</h3>
+        <p>
+          Work with actual production datasets and understand
+          real-world challenges and limitations
+        </p>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="intern-card reveal-up">
+        <div class="intern-icon">
+          <i class="fa-solid fa-users"></i>
+        </div>
+        <h3>Team-based engineering execution</h3>
+        <p>
+          Collaborate with experienced AI engineers in a
+          professional team environment
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<script>
+    /* ===================================
+   UNIVERSAL SCROLL REVEAL
+=================================== */
+
+function revealElements() {
+
+  const elements =
+    document.querySelectorAll(
+      ".reveal-left, .reveal-right, .reveal-up"
+    );
+
+  const windowHeight = window.innerHeight;
+  const revealPoint = 120;
+
+  elements.forEach((el) => {
+
+    const elementTop =
+      el.getBoundingClientRect().top;
+
+    if (elementTop < windowHeight - revealPoint) {
+      el.classList.add("show");
+    }
+
+  });
+
+}
+
+window.addEventListener("scroll", revealElements);
+window.addEventListener("load", revealElements);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="placement-section">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      PLACEMENT ASSISTANCE
+      <span class="heading-line"></span>
+    </h2>
+
+    <!-- MAIN PANEL -->
+    <div class="placement-box reveal-up">
+
+      <div class="placement-icon">
+        <i class="fa-solid fa-briefcase"></i>
+      </div>
+
+      <h3>
+        Nfosoft Innovations will recruit all candidates who
+        successfully meet performance standards
+      </h3>
+
+      <h2 class="placement-ctc">
+        Minimum CTC: ₹12 LPA for selected candidates
+      </h2>
+
+      <!-- FEATURES -->
+      <div class="placement-grid">
+
+        <div class="placement-card reveal-left">
+          <i class="fa-solid fa-user-check"></i>
+          <p>
+            Final recruitment decision is made after
+            6 months of live internship
+          </p>
+        </div>
+
+        <div class="placement-card reveal-up">
+          <i class="fa-solid fa-chart-line"></i>
+          <p>
+            Assessment is based on technical skills,
+            AI product contribution and engineering ability
+          </p>
+        </div>
+
+        <div class="placement-card reveal-right">
+          <i class="fa-solid fa-rocket"></i>
+          <p>
+            Selected candidates are onboarded into
+            AI Engineering / AI Product roles
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="batch-section">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      BATCH STRUCTURE & INTAKE POLICY
+      <span class="heading-line"></span>
+    </h2>
+
+    <!-- TOP NOTE -->
+    <div class="batch-note reveal-up">
+      Strictly limited intake model
+    </div>
+
+    <!-- BATCH GRID -->
+    <div class="batch-grid">
+
+      <div class="batch-card reveal-left">
+        <i class="fa-solid fa-layer-group"></i>
+        <h3>Batch 1</h3>
+        <p>25 Candidates</p>
+        <span>Date : 00-00-2026</span>
+      </div>
+
+      <div class="batch-card reveal-up">
+        <i class="fa-solid fa-calendar"></i>
+        <h3>Batch 2</h3>
+        <p>25 Candidates</p>
+        <span>Date : 00-00-2026</span>
+      </div>
+
+      <div class="batch-card reveal-up">
+        <i class="fa-solid fa-users"></i>
+        <h3>Batch 3</h3>
+        <p>25 Candidates</p>
+        <span>Date : 00-00-2026</span>
+      </div>
+
+      <div class="batch-card reveal-right">
+        <i class="fa-solid fa-user-graduate"></i>
+        <h3>Batch 4</h3>
+        <p>25 Candidates</p>
+        <span>Date : 00-00-2026</span>
+      </div>
+
+    </div>
+
+    <!-- BOTTOM NOTE -->
+    <div class="batch-footer reveal-up">
+      Ensures focused mentoring and planned recruitment
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="certificate-section">
+
+  <div class="container">
+
+    <h2 class="certificate-title reveal-up">
+      CERTIFICATION
+      <span class="heading-line"></span>
+    </h2>
+
+    <!-- CERTIFICATE -->
+    <div class="certificate-box reveal-up">
+
+      <!-- LOGO -->
+      <div class="cert-logo">
+        <img src="logoo.png" alt="logo">
+      </div>
+
+      <h3 class="cert-org">Nfosoft Innovations</h3>
+      <p class="cert-present">presents</p>
+
+      <div class="cert-heading">
+        CERTIFICATE OF COMPLETION
+      </div>
+
+      <p class="cert-text">This is to certify that</p>
+
+      <h2 class="candidate-name">[Candidate Name]</h2>
+
+      <p class="cert-text">has successfully completed</p>
+
+      <h3 class="program-name">
+        AI Product Engineering Program (AI-PEP)
+      </h3>
+
+      <p class="cert-desc">
+        demonstrating excellence in AI product development and engineering
+      </p>
+
+      <p class="completion-date">
+        Completion Date: [Date]
+      </p>
+
+      <!-- NOTES -->
+      <div class="cert-notes">
+
+        <p>Certificate of Completion from Nfosoft Innovations</p>
+        <p>Issued after successful training and live project completion</p>
+        <p>Validates practical AI product engineering capability</p>
+
+      </div>
+
+      <span class="sample-text">
+        Sample Certificate Design
+      </span>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<section class="eligibility-section">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      ELIGIBILITY CRITERIA
+      <span class="heading-line"></span>
+    </h2>
+
+    <div class="eligibility-wrapper">
+
+      <div class="eligibility-row reveal-up">
+        <div class="check-icon">
+          <i class="fa-solid fa-check"></i>
+        </div>
+        <p>B.Tech / B.E in AI, CSE, Data Science, ML</p>
+      </div>
+
+      <div class="eligibility-row reveal-up">
+        <div class="check-icon">
+          <i class="fa-solid fa-check"></i>
+        </div>
+        <p>Any graduation with AI-related coursework</p>
+      </div>
+
+      <div class="eligibility-row reveal-up">
+        <div class="check-icon">
+          <i class="fa-solid fa-check"></i>
+        </div>
+        <p>Working professionals with technical background</p>
+      </div>
+
+      <div class="eligibility-row reveal-up">
+        <div class="check-icon">
+          <i class="fa-solid fa-check"></i>
+        </div>
+        <p>Willingness to commit to full-time onsite program</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="assessment-section">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      ASSESSMENT & EVALUATION
+      <span class="heading-line"></span>
+    </h2>
+
+    <div class="assessment-flow">
+
+      <div class="assessment-step reveal-left">
+        <div class="step-icon">
+          <i class="fa-solid fa-clipboard-check"></i>
+        </div>
+        <div class="step-content">
+          <h3>Continuous technical assessments</h3>
+          <p>
+            Regular evaluation of technical skills and knowledge
+            throughout the program
+          </p>
+        </div>
+      </div>
+
+      <div class="assessment-step reveal-right">
+        <div class="step-icon">
+          <i class="fa-solid fa-flask"></i>
+        </div>
+        <div class="step-content">
+          <h3>Practical assignments and labs</h3>
+          <p>
+            Hands-on exercises and laboratory sessions
+            for skill development
+          </p>
+        </div>
+      </div>
+
+      <div class="assessment-step reveal-left">
+        <div class="step-icon">
+          <i class="fa-solid fa-diagram-project"></i>
+        </div>
+        <div class="step-content">
+          <h3>Project-based evaluations</h3>
+          <p>
+            Assessment through real-world AI project implementation
+          </p>
+        </div>
+      </div>
+
+      <div class="assessment-step reveal-right">
+        <div class="step-icon">
+          <i class="fa-solid fa-chart-line"></i>
+        </div>
+        <div class="step-content">
+          <h3>Performance reviews during live project phase</h3>
+          <p>
+            Ongoing evaluation during 6-month live internship period
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="why-section">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      WHY CHOOSE THIS PROGRAM
+      <span class="heading-line"></span>
+    </h2>
+
+    <div class="why-grid">
+
+      <div class="why-card reveal-up">
+        <div class="why-icon">
+          <i class="fa-solid fa-gears"></i>
+        </div>
+        <h3>AI product engineering, not tool-based learning</h3>
+        <p>
+          Focus on building complete AI products rather than
+          just learning tools
+        </p>
+      </div>
+
+      <div class="why-card reveal-up">
+        <div class="why-icon">
+          <i class="fa-solid fa-building"></i>
+        </div>
+        <h3>Full-time onsite immersive model</h3>
+        <p>
+          Completely immersive learning environment
+          with direct mentor access
+        </p>
+      </div>
+
+      <div class="why-card reveal-up">
+        <div class="why-icon">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+        <h3>Cloud-based GPU-first infrastructure</h3>
+        <p>
+          Access to high-performance cloud computing resources
+        </p>
+      </div>
+
+      <div class="why-card reveal-up">
+        <div class="why-icon">
+          <i class="fa-solid fa-rocket"></i>
+        </div>
+        <h3>Real AI products, real accountability</h3>
+        <p>
+          Work on actual production AI systems
+          with measurable outcomes
+        </p>
+      </div>
+
+      <div class="why-card reveal-up">
+        <div class="why-icon">
+          <i class="fa-solid fa-user-tie"></i>
+        </div>
+        <h3>Direct recruitment into Nfosoft Innovations</h3>
+        <p>
+          Guaranteed employment opportunity
+          based on performance standards
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="outcomes-section">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      STUDENT OUTCOMES
+      <span class="heading-line"></span>
+    </h2>
+
+    <div class="outcomes-wrapper">
+
+      <div class="outcome-item reveal-left">
+        <div class="outcome-icon">
+          <i class="fa-solid fa-code"></i>
+        </div>
+        <div class="outcome-text">
+          <h3>Ability to independently build AI products</h3>
+          <p>
+            Hands-on experience with enterprise-level AI infrastructure
+          </p>
+        </div>
+      </div>
+
+      <div class="outcome-item reveal-right">
+        <div class="outcome-icon">
+          <i class="fa-solid fa-server"></i>
+        </div>
+        <div class="outcome-text">
+          <h3>Experience with production-grade AI systems</h3>
+          <p>
+            Hands-on experience with enterprise-level AI infrastructure
+          </p>
+        </div>
+      </div>
+
+      <div class="outcome-item reveal-left">
+        <div class="outcome-icon">
+          <i class="fa-solid fa-compass-drafting"></i>
+        </div>
+        <div class="outcome-text">
+          <h3>Strong engineering and system design skills</h3>
+          <p>
+            Proficiency in architecting scalable and robust AI systems
+          </p>
+        </div>
+      </div>
+
+      <div class="outcome-item reveal-right">
+        <div class="outcome-icon">
+          <i class="fa-solid fa-briefcase"></i>
+        </div>
+        <div class="outcome-text">
+          <h3>Readiness for advanced AI roles</h3>
+          <p>
+            Prepared for senior positions in AI product development
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="faq-section">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      FAQS
+      <span class="heading-line"></span>
+    </h2>
+
+    <div class="faq-wrapper">
+
+      <div class="faq-item reveal-up">
+        <button class="faq-question">
+          Is this an online program?
+          <span class="faq-icon">⌄</span>
+        </button>
+        <div class="faq-answer">
+          <p>No, This is a full-time onsite AI product engineering program.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal-up">
+        <button class="faq-question">
+          Is this a short course?
+          <span class="faq-icon">⌄</span>
+        </button>
+        <div class="faq-answer">
+          <p>No, It is a long-term immersive program focused on real AI product development.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal-up">
+        <button class="faq-question">
+          Are projects real?
+          <span class="faq-icon">⌄</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes, Students work on production-level AI systems used in real environments.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal-up">
+        <button class="faq-question">
+          Is recruitment guaranteed?
+          <span class="faq-icon">⌄</span>
+        </button>
+        <div class="faq-answer">
+          <p>yes,Recruitment depends on performance evaluation during internship phases.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+    const faqs = document.querySelectorAll(".faq-item");
+
+faqs.forEach((faq) => {
+
+  faq.querySelector(".faq-question")
+  .addEventListener("click", () => {
+
+    faq.classList.toggle("active");
+
+  });
+
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="fees-section">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      FEES & PAYMENT OPTIONS
+      <span class="heading-line"></span>
+    </h2>
+
+    <div class="fees-box reveal-up">
+
+      <h3 class="fees-title">
+        Total Program Fee: ₹160000 + applicable taxes
+      </h3>
+
+      <hr>
+
+      <h4>Fee covers:</h4>
+
+      <ul class="fees-list">
+        <li>12 months of full-time, onsite AI-PEP training</li>
+        <li>6 months intensive AI engineering training</li>
+        <li>6 months live AI product internship at Nfosoft Innovations</li>
+        <li>Cloud-based GPU infrastructure access</li>
+        <li>Mentorship, assessments, and evaluations</li>
+        <li>Certification upon successful completion</li>
+      </ul>
+
+      <div class="fees-note">
+        <h5>Note:</h5>
+        <ul>
+          <li>Payment structure will be shared during admissions counselling</li>
+          <li>Flexible payment options available for eligible candidates</li>
+          <li>Fees are non-refundable once program commences, as per admission terms</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+<section class="contact-section">
+
+<div class="container">
+
+<h2 class="section-title">
+CONTACT & ENQUIRY DETAILS
+<span class="heading-line"></span>
+</h2>
+
+<div class="contact-wrapper">
+
+<!-- LEFT INFO -->
+<div class="contact-info reveal-left">
+
+<div class="info-box">
+<i class="fa-solid fa-building"></i>
+<div>
+<h4>Office Address</h4>
+<p>
+Nfosoft Innovations<br>
+Pillar No. 1864, Near Madhapur Metro Station<br>
+Hyderabad, Telangana 500081<br>
+India
+</p>
+</div>
+</div>
+
+<hr>
+
+<div class="info-box">
+<i class="fa-solid fa-envelope"></i>
+<div>
+<h4>Email Addresses</h4>
+<p>
+info@nfosoft.com (General)<br>
+admissions@nfosoft.com (Admissions)<br>
+support@nfosoft.com (Technical Support)
+</p>
+</div>
+</div>
+
+<hr>
+
+<div class="info-box">
+<i class="fa-solid fa-clock"></i>
+<div>
+<h4>Business Hours</h4>
+<p>
+Monday - Friday: 9:00 AM - 6:00 PM<br>
+Saturday and Sunday – closed
+</p>
+</div>
+</div>
+
+</div>
+
+
+<!-- RIGHT FORM -->
+<div class="contact-form reveal-right">
+
+<h3>Send us a Message</h3>
+
+<form>
+
+<input type="text" placeholder="Full Name *" required>
+<input type="email" placeholder="Email ID *" required>
+<input type="tel" placeholder="Phone Number *" required>
+
+<select required>
+<option>I am a *</option>
+<option>Student</option>
+<option>Working Professional</option>
+<option>Parent</option>
+<option>Other</option>
+</select>
+
+<textarea placeholder="Message *" required></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+</main>
+
+
+<footer class="site-footer">
+
+  
+
+  <p>
+    © 2026 Nfosoft Innovations. All rights reserved.
+  </p>
+
+</footer>
