@@ -17,10 +17,9 @@
 </head>
 <body>
 
-<canvas id="gridCanvas"></canvas>
   <!-- NAVBAR -->
   <nav class="navbar">
-    <div class="container nav-container">
+    <div class="nav-container">
 
       <!-- Logo -->
       <a href="#home" class="logo">
@@ -46,14 +45,15 @@
   </nav>
 
   
-
 <script>
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("navLinks");
+const hamburger =
+document.getElementById("hamburger");
 
-hamburger.addEventListener("click", () => {
+const navLinks =
+document.getElementById("navLinks");
+
+hamburger.addEventListener("click",()=>{
   navLinks.classList.toggle("active");
-  hamburger.classList.toggle("open");
 });
 </script>
 
@@ -66,7 +66,7 @@ hamburger.addEventListener("click", () => {
 
 <section class="hero">
 
-<canvas id="gridCanvas"></canvas>
+
 
 <div class="hero-content">
 
@@ -127,53 +127,6 @@ BOOK COUNSELLING →
 
 </div>
 </section>
-
-<script>
-const canvas = document.getElementById("gridCanvas");
-const ctx = canvas.getContext("2d");
-
-function resize(){
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-}
-resize();
-window.addEventListener("resize", resize);
-
-let spacing = 60;
-
-function drawGrid(){
-ctx.clearRect(0,0,canvas.width,canvas.height);
-
-ctx.strokeStyle = "rgba(120,90,180,0.09)";
-ctx.lineWidth = 1;
-
-for(let x=0; x<canvas.width; x+=spacing){
-ctx.beginPath();
-ctx.moveTo(x,0);
-ctx.lineTo(x,canvas.height);
-ctx.stroke();
-}
-
-for(let y=0; y<canvas.height; y+=spacing){
-ctx.beginPath();
-ctx.moveTo(0,y);
-ctx.lineTo(canvas.width,y);
-ctx.stroke();
-}
-
-for(let x=0; x<canvas.width; x+=spacing){
-for(let y=0; y<canvas.height; y+=spacing){
-ctx.fillStyle="rgba(167,139,250,0.09)";
-ctx.beginPath();
-ctx.arc(x,y,1.3,0,Math.PI*2);
-ctx.fill();
-}
-}
-}
-
-drawGrid();
-</script>
-
 
 
 
