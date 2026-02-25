@@ -47,7 +47,15 @@
 
   
 
+<script>
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
 
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+  hamburger.classList.toggle("open");
+});
+</script>
 
 
   
@@ -780,11 +788,6 @@ COURSE SYLLABUS
 </section>
 
 
-<!-- FONT AWESOME -->
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<link rel="stylesheet" href="syllabus.css">
 
 
 <script>

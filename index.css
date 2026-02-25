@@ -15,6 +15,7 @@ body {
    display:flex;
   flex-direction:column;
   min-height:100vh;
+   padding-top:100px;
 }
 
 
@@ -27,7 +28,6 @@ main{
   margin: 0 auto;
   padding: 0 25px;
 }
-
 /* ================= NAVBAR ================= */
 
 .navbar {
@@ -45,11 +45,12 @@ main{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
-/* LOGO BIGGER */
+/* LOGO */
 .logo img {
-  height: 70px;   /* Bigger logo */
+  height: 70px;
   transition: 0.3s ease;
   margin-left: 30px;
 }
@@ -58,10 +59,11 @@ main{
   transform: scale(1.05);
 }
 
-/* NAV LINKS */
+/* ================= DESKTOP NAV ================= */
+
 .nav-links {
   list-style: none;
-  display: flex;
+  display: flex;   /* ✅ visible on desktop */
   gap: 35px;
 }
 
@@ -76,7 +78,7 @@ main{
   transition: 0.3s ease;
 }
 
-/* 🔥 MODERN HOVER EFFECT */
+/* Hover Effect */
 .nav-links a::after {
   content: "";
   position: absolute;
@@ -87,10 +89,6 @@ main{
   background: #49326B;
   transition: width 0.3s ease;
   border-radius: 5px;
-}
-
-.nav-links a:hover {
-  color: #49326B;
 }
 
 .nav-links a:hover::after {
@@ -104,68 +102,42 @@ main{
   cursor: pointer;
 }
 
-/* ================= SECTIONS ================= */
-
-.section {
-  padding: 140px 0;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-}
-
-.section h1 {
-  text-align: center;
-  width: 100%;
-}
-
-/* Alternate backgrounds */
-.light {
-  background: #ffffff;
-}
-
-.alt {
-  background: #f4f0fa; /* very soft purple tint */
-}
-
-/* Fix scroll offset */
-section {
-  scroll-margin-top: 100px;
-}
-
 /* ================= MOBILE ================= */
+@media (max-width:768px){
 
-@media (max-width: 768px) {
+.nav-links{
+  position:absolute;
+  top:85px;
+  right:0;
+  width:100%;
+  background:#ffffff;
 
-  .nav-links {
-    position: absolute;
-    top: 85px;
-    right: 0;
-    background: #ffffff;
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    display: none;
-    padding: 30px 0;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  }
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
 
-  .nav-links li {
-    margin: 18px 0;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
+  max-height:0;
+  overflow:hidden;
+  transition:0.4s ease;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
+.nav-links li{
+  margin:18px 0;
+}
 
+/* MENU OPEN */
+.nav-links.active{
+  max-height:500px;
+  padding:30px 0;
+}
 
+.hamburger{
+  display:block;
+}
 
+}
 
 
 
