@@ -27,107 +27,167 @@ html,body{
 
 /* ================= NAVBAR ================= */
 
+
+/* =======================
+   GLOBAL FIX
+======================= */
+
+body{
+  margin:0;
+  padding-top:100px; /* prevents content hiding under fixed navbar */
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+/* =======================
+   NAVBAR
+======================= */
+
 .navbar{
   position:fixed;
   top:0;
   left:0;
   width:100%;
-  background:#fff;
+  background:#ffffff;
   z-index:9999;
-  box-shadow:0 2px 8px rgba(0,0,0,0.08);
+  box-shadow:0 2px 10px rgba(0,0,0,0.06);
 }
+
+/* =======================
+   NAV CONTAINER
+======================= */
 
 .nav-container{
   max-width:1200px;
   margin:auto;
+  height:100px;
+  padding:0 20px;
+
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:10px 20px;
-  position:relative;
 }
 
-/* LOGO */
+/* =======================
+   LOGO SECTION
+======================= */
+
+.logo{
+  display:flex;
+  flex-direction:column;   /* image + text vertically */
+  align-items:center;
+  text-decoration:none;
+}
+
 .logo img{
-  height:60px;
+  height:70px;
+  width:auto;
+  display:block;
 }
 
-/* DESKTOP MENU */
+.logo span{
+  font-size:9px;          /* small text */
+  font-weight:600;
+  color:#4b2aad;
+  margin-top:6px;
+  text-align:center;
+  line-height:1.2;
+  white-space:nowrap;
+}
+
+/* =======================
+   DESKTOP NAV LINKS
+======================= */
+
 .nav-links{
   list-style:none;
   display:flex;
-  gap:30px;
+  align-items:center;
+  gap:35px;
+  margin:0;
+  padding:0;
+    margin-top:10px; 
 }
 
 .nav-links a{
   text-decoration:none;
-  color:#49326b;
+  color:#0f1226;
+  font-size:17px;
   font-weight:600;
+  transition:0.3s ease;
 }
 
-/* HAMBURGER */
+.nav-links a:hover{
+  color:#4b2aad;
+}
+
+/* =======================
+   HAMBURGER
+======================= */
+
 .hamburger{
   display:none;
   font-size:26px;
   cursor:pointer;
-  color:#49326b;
+  color:#0f1226;
 }
 
-/* ================= MOBILE ================= */
+/* =======================
+   MOBILE VIEW
+======================= */
 
-@media(max-width:768px){
+@media(max-width:992px){
 
-.nav-container{
-  height:70px;
-  padding:0 15px;
+  body{
+    padding-top:80px;
+  }
+
+  .nav-container{
+    height:80px;
+  }
+
+  .logo img{
+    height:55px;
+  }
+
+  .logo span{
+    font-size:11px;
+  }
+
+  .hamburger{
+    display:block;
+  }
+
+  .nav-links{
+    position:absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    background:#ffffff;
+
+    flex-direction:column;
+    align-items:center;
+
+    max-height:0;
+    overflow:hidden;
+    transition:0.4s ease;
+  }
+
+  .nav-links.active{
+    max-height:500px;
+    padding:20px 0;
+  }
+
+  .nav-links li{
+    padding:12px 0;
+  }
 }
 
-/* logo left */
-.logo{
-  position:absolute;
-  left:15px;
-}
 
-.logo img{
-  height:50px;
-}
 
-/* hamburger right */
-.hamburger{
-  display:block;
-  position:absolute;
-  right:15px;
-  top:50%;
-  transform:translateY(-50%);
-}
 
-/* MOBILE MENU */
-.nav-links{
-  position:absolute;
-  top:100%;
-  left:0;
-  width:100%;
-  background:#fff;
 
-  flex-direction:column;
-  align-items:center;
 
-  max-height:0;
-  overflow:hidden;
-  transition:.4s ease;
-}
 
-/* SHOW MENU */
-.nav-links.active{
-  max-height:500px;
-  padding:15px 0;
-}
-
-.nav-links li{
-  padding:12px 0;
-}
-
-}
 
 
 
@@ -490,6 +550,78 @@ transform:translateY(-15px);
 
 
 
+.hero{
+  position:relative;
+  background:linear-gradient(135deg,#0f0a1f,#1a1635);
+  overflow:hidden;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+
+  width:140%;
+  height:140%;
+
+  top:-20%;
+  left:-20%;
+ background:linear-gradient(
+    120deg,
+    rgba(123, 101, 209, 0.25),
+    rgba(93, 74, 178, 0.35),
+    rgba(67, 58, 107, 0.2)
+  );
+
+
+  transform:rotate(-25deg);
+  animation: slowRotate 10s linear infinite;
+
+  z-index:0;
+}
+
+@keyframes slowRotate{
+  from{
+    transform:rotate(-25deg);
+  }
+  to{
+    transform:rotate(335deg);
+  }
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+
+  width:120%;
+  height:120%;
+
+  top:-10%;
+  left:-10%;
+
+  background:radial-gradient(circle, rgba(123,76,224,0.25), transparent 70%);
+
+  transform:rotate(20deg);
+  animation: reverseRotate 10s linear infinite;
+
+  z-index:0;
+}
+
+@keyframes reverseRotate{
+  from{
+    transform:rotate(20deg);
+  }
+  to{
+    transform:rotate(-340deg);
+  }
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -632,7 +764,7 @@ transform:translateY(-15px);
 
 .residency-heading{
   text-align:center;
-  font-size:36px;
+  font-size:34px;
   margin-bottom:80px;
   font-weight:600;
   text-transform: uppercase;
@@ -3670,26 +3802,60 @@ width:100vw;
         CONTACT SECTION
 ===================================== */
 .contact-section{
-padding:70px 20px;
-background:#151936;
-width:100%;
+  padding:50px 20px;
+  background:#151936;
+  width:100%;
+  display:flex;
+  justify-content:center;   /* center content */
 }
 
+.contact-section{
+  position:relative;
+  padding:50px 20px;
+  overflow:hidden;
 
+  background:
+    linear-gradient(#141936, #0f1226);
+}
+
+/* Square Grid Layer */
+.contact-section::before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background-image:
+    linear-gradient(rgba(123,76,224,0.35) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(123,76,224,0.35) 1px, transparent 1px);
+
+  background-size: 70px 70px;  /* square size */
+  opacity:0.25;
+
+  animation: moveSquares 8s linear infinite;
+}
+
+@keyframes moveSquares{
+  from{
+    background-position:0 0, 0 0;
+  }
+  to{
+    background-position:70px 70px, 70px 70px;
+  }
+}
 
 /* ================= WRAPPER ================= */
 
 .contact-wrapper{
-display:grid;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:40px;
+  margin-top:60px;
 
-/* equal columns */
-grid-template-columns:repeat(2,minmax(0,1fr));
+  align-items:stretch;
+  grid-auto-rows:1fr;
 
-gap:40px;
-margin-top:60px;
-
-align-items:stretch;
-grid-auto-rows:1fr;
+  max-width:1000px;   /* 👈 LIMIT WIDTH */
+  width:100%;
 }
 
 /* ================= COMMON BOX STYLE ================= */
@@ -3869,14 +4035,54 @@ padding:12px;
 
 }
 
+/* ===== BUTTON LOADER ===== */
 
+#sendBtn{
+  position:relative;
+  overflow:hidden;
+}
 
+#sendBtn .loader{
+  display:none;
+  width:18px;
+  height:18px;
+  border:2px solid white;
+  border-top:2px solid transparent;
+  border-radius:50%;
+  animation:spin 0.7s linear infinite;
+}
 
+#sendBtn.loading .btn-text{
+  display:none;
+}
 
+#sendBtn.loading .loader{
+  display:inline-block;
+}
 
+@keyframes spin{
+  to{ transform:rotate(360deg); }
+}
 
+/* ===== STATUS MESSAGE ===== */
 
+.form-status{
+  margin-top:15px;
+  font-size:14px;
+  font-weight:500;
+  opacity:0;
+  transition:0.4s ease;
+}
 
+.form-status.success{
+  color:#22c55e;
+  opacity:1;
+}
+
+.form-status.error{
+  color:#ef4444;
+  opacity:1;
+}
 
 /* =====================================
               FOOTER
@@ -3887,7 +4093,7 @@ padding:12px;
   width:100%;
   padding:20px 0;
 
-  
+    background:#151936;
 
   text-align:center;
   color:white;
