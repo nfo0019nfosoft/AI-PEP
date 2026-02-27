@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap" rel="stylesheet">
   <title>Nfosoft Innovations</title>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="icon" type="image/png" href="log.png">
 
   <!-- Font Awesome -->
   <link rel="stylesheet"
@@ -2057,3 +2059,251 @@ form.addEventListener("submit", async function(e){
   </p>
 
 </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- AI Chat Widget -->
+    <div class="chat-widget">
+        <!-- Chat Toggle Button -->
+        <div id="chatToggle" class="chat-toggle">
+            <i class="fas fa-comments"></i>
+            <span class="chat-badge">3</span>
+        </div>
+
+        <!-- Chat Panel -->
+        <div id="chatPanel" class="chat-panel">
+            <!-- Chat Header -->
+            <div class="chat-header">
+                <div class="chat-header-content">
+                    <div class="chat-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="chat-info">
+                        <h4>AI Assistant</h4>
+                        <span class="chat-status">Online</span>
+                    </div>
+                </div>
+                <button id="closeChat" class="close-chat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <!-- Chat Messages -->
+            <div id="chatMessages" class="chat-messages">
+                <div class="message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <p>👋 Hi! I'm your virtual assistant. How can I help you today?</p>
+                        <span class="message-time">Just now</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Input -->
+            <div class="chat-input-container">
+                <div class="input-wrapper">
+                    <input type="text" id="chatInput" class="chat-input" placeholder="Type your message..." autocomplete="off">
+                    <button id="sendMessage" class="send-button">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="typing-indicator" id="typingIndicator">
+                    <span class="typing-dot"></span>
+                    <span class="typing-dot"></span>
+                    <span class="typing-dot"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+  // Initialize Chat Widget
+    initChatWidget();
+});
+
+// Button click handlers
+function handleApply() {
+    document.getElementById('applicationModal').style.display = 'block';
+}
+
+function handleCounselling() {
+    // Replace with actual counselling booking system
+    alert('Counselling booking system will be available soon. Please contact us at info@nfosoft.com');
+}
+
+// Chat Widget Functions
+function initChatWidget() {
+    let inactivityTimer;
+    let helpMessageSent = false;
+    let chatOpen = false;
+
+    const chatToggle = document.getElementById('chatToggle');
+    const chatPanel = document.getElementById('chatPanel');
+    const closeChat = document.getElementById('closeChat');
+    const chatInput = document.getElementById('chatInput');
+    const sendMessage = document.getElementById('sendMessage');
+    const chatMessages = document.getElementById('chatMessages');
+    const typingIndicator = document.getElementById('typingIndicator');
+
+    // Toggle chat panel
+    chatToggle.addEventListener('click', () => {
+        chatOpen = !chatOpen;
+        if (chatOpen) {
+            chatPanel.classList.add('active');
+            chatToggle.style.transform = 'scale(0.8)';
+            chatToggle.style.opacity = '0.5';
+            chatInput.focus();
+        } else {
+            chatPanel.classList.remove('active');
+            chatToggle.style.transform = 'scale(1)';
+            chatToggle.style.opacity = '1';
+        }
+    });
+
+    // Close chat panel
+    closeChat.addEventListener('click', () => {
+        chatOpen = false;
+        chatPanel.classList.remove('active');
+        chatToggle.style.transform = 'scale(1)';
+        chatToggle.style.opacity = '1';
+    });
+
+    // Send message
+    sendMessage.addEventListener('click', () => {
+        const message = chatInput.value.trim();
+        if (!message) return;
+
+        addUserMessage(message);
+        chatInput.value = '';
+        
+        showTypingIndicator();
+        
+        setTimeout(() => {
+            hideTypingIndicator();
+            processBotResponse(message);
+        }, 1000);
+        
+        resetInactivityTimer();
+    });
+
+    // Enter key to send
+    chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            sendMessage.click();
+        }
+    });
+
+    // Reset inactivity timer on user interaction
+    chatInput.addEventListener('input', resetInactivityTimer);
+    chatMessages.addEventListener('click', resetInactivityTimer);
+
+    // Auto welcome message
+    setTimeout(() => {
+        addBotMessage('👋 Hi! I\'m your virtual assistant. How can I help you today?');
+    }, 2000);
+
+    // Start inactivity timer
+    startInactivityTimer();
+
+    function addUserMessage(message) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'message user-message';
+        messageDiv.innerHTML = `
+            <div class="message-avatar">
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="message-content">
+                <p>${escapeHtml(message)}</p>
+                <span class="message-time">${getCurrentTime()}</span>
+            </div>
+        `;
+        chatMessages.appendChild(messageDiv);
+        scrollToBottom();
+    }
+
+    function addBotMessage(message) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'message bot-message';
+        messageDiv.innerHTML = `
+            <div class="message-avatar">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="message-content">
+                <p>${message}</p>
+                <span class="message-time">${getCurrentTime()}</span>
+            </div>
+        `;
+        chatMessages.appendChild(messageDiv);
+        scrollToBottom();
+    }
+
+    function processBotResponse(message) {
+        const lowerMessage = message.toLowerCase();
+        
+        if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
+            addBotMessage('👋 Hello! Welcome to our AI Product Engineering Program. How can I assist you today?');
+        } else if (lowerMessage.includes('pricing') || lowerMessage.includes('cost') || lowerMessage.includes('fee')) {
+            addBotMessage('💰 Our AI-PEP program offers comprehensive training with direct recruitment opportunities. For detailed pricing information, please check application section or contact our admissions team.');
+        } else if (lowerMessage.includes('services') || lowerMessage.includes('program') || lowerMessage.includes('course')) {
+            addBotMessage('🎓 Our program includes: AI foundations, Machine Learning, Deep Learning, NLP, Computer Vision, MLOps, and real-world project experience. Would you like more details about any specific area?');
+        } else if (lowerMessage.includes('contact') || lowerMessage.includes('phone') || lowerMessage.includes('email')) {
+            addBotMessage('📞 You can reach our admissions team through the contact form on this website, or email us at admissions@nfosoft.com. We typically respond within 24 hours!');
+        } else {
+            addBotMessage('🤔 I understand you\'re interested in our AI Product Engineering Program. For specific information about pricing, curriculum, requirements, or enrollment, please let me know how I can help you better!');
+        }
+    }
+
+    function showTypingIndicator() {
+        typingIndicator.classList.add('active');
+    }
+
+    function hideTypingIndicator() {
+        typingIndicator.classList.remove('active');
+    }
+
+    function scrollToBottom() {
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function getCurrentTime() {
+        const now = new Date();
+        return now.toLocaleTimeString('en-US', { 
+            hour: '2-digit', 
+            minute: '2-digit',
+            hour12: true 
+        });
+    }
+
+    function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+
+    function startInactivityTimer() {
+        inactivityTimer = setTimeout(() => {
+            if (!helpMessageSent) {
+                addBotMessage('Need help choosing something? I\'m here 😊');
+                helpMessageSent = true;
+            }
+        }, 10000);
+    }
+
+    function resetInactivityTimer() {
+        clearTimeout(inactivityTimer);
+        startInactivityTimer();
+    }
+}
+</script>
